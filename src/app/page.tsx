@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import About from "@/components/About";
 import Features from "@/components/Features";
 import Automation from "@/components/Automation";
 import TechStack from "@/components/TechStack";
@@ -13,6 +14,7 @@ export default function Home() {
     <main className="min-h-screen">
       <Navbar />
       <Hero />
+      <About />
       <Features />
       <Automation />
       <TechStack />
