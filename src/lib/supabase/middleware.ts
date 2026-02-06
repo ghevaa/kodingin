@@ -6,13 +6,24 @@ import { NextResponse, type NextRequest } from 'next/server';
  * Handles session refresh and cookie updates.
  */
 export async function updateSession(request: NextRequest) {
+    // Check if Supabase environment variables are configured
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+    const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+    if (!supabaseUrl || !supabaseAnonKey) {
+        // If Supabase is not configured, just pass through the request
+        // This prevents the middleware from crashing during deployment
+        console.warn('Supabase environment variables not configured. Skipping auth middleware.');
+        return NextResponse.next({ request });
+    }
+
     let supabaseResponse = NextResponse.next({
         request,
     });
 
     const supabase = createServerClient(
-        process.env.NEXT_PUBLIC_SUPABASE_URL!,
-        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+        supabaseUrl,
+        supabaseAnonKey,
         {
             cookies: {
                 getAll() {
