@@ -45,13 +45,16 @@ export default function Hero() {
                     </ScrollReveal>
 
                     <ScrollReveal delay={0.4} duration={0.8} direction="up" distance={30}>
-                        <div className="hero-cta">
+                        <div className="hero-cta flex gap-4">
                             <a href="#contact" className="btn btn-primary btn-lg">
                                 Start Building
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                     <line x1="5" y1="12" x2="19" y2="12" />
                                     <polyline points="12 5 19 12 12 19" />
                                 </svg>
+                            </a>
+                            <a href="#about" className="btn btn-lg bg-white/5 border border-white/10 hover:bg-white/10 text-white backdrop-blur-sm transition-all">
+                                About Us
                             </a>
                         </div>
                     </ScrollReveal>

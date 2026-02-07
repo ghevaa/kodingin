@@ -19,25 +19,36 @@ function LoginFormSkeleton() {
 
 export default function LoginPage() {
     return (
-        <div className="min-h-screen flex items-center justify-center bg-[var(--bg-primary)]">
-            <div className="w-full max-w-md p-4">
+        <div className="min-h-screen flex items-center justify-center bg-[var(--bg-primary)] relative overflow-hidden">
+            {/* Background Glows */}
+            <div className="absolute top-[-20%] left-[-10%] w-[500px] h-[500px] bg-[var(--color-primary)]/20 rounded-full blur-[120px] pointer-events-none"></div>
+            <div className="absolute bottom-[-20%] right-[-10%] w-[500px] h-[500px] bg-[var(--color-secondary)]/20 rounded-full blur-[120px] pointer-events-none"></div>
+
+            <div className="w-full max-w-md p-4 relative z-10">
                 {/* Header */}
                 <div className="text-center mb-8">
-                    <h1 className="dashboard-title text-3xl mb-2">Admin Login</h1>
-                    <p className="dashboard-subtitle">Sign in to manage your blog</p>
+                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-[var(--color-primary)] to-purple-600 shadow-lg shadow-purple-500/30 mb-6">
+                        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                        </svg>
+                    </div>
+                    <h1 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 mb-2">Admin Login</h1>
+                    <p className="text-[var(--text-secondary)]">Sign in to manage your content</p>
                 </div>
 
-                {/* Login Form wrapped in Suspense for useSearchParams */}
-                <div className="dashboard-card shadow-2xl">
-                    <Suspense fallback={<LoginFormSkeleton />}>
-                        <LoginForm />
-                    </Suspense>
+                {/* Login Form wrapped in glass card */}
+                <div className="bg-[var(--bg-card)]/80 backdrop-blur-xl border border-[var(--border-color)] rounded-2xl shadow-2xl p-1">
+                    <div className="bg-[var(--bg-card)]/50 rounded-xl p-6 sm:p-8">
+                        <Suspense fallback={<LoginFormSkeleton />}>
+                            <LoginForm />
+                        </Suspense>
+                    </div>
                 </div>
 
-                {/* Setup Instructions */}
-                <div className="mt-8 text-center">
+                {/* Footer Info */}
+                <div className="mt-8 text-center space-y-2">
                     <p className="text-sm text-[var(--text-muted)]">
-                        Create an account in your Supabase Dashboard under Authentication → Users
+                        Secure Access • Kodingin Admin
                     </p>
                 </div>
             </div>
