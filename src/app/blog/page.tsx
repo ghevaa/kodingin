@@ -19,37 +19,37 @@ export default async function BlogPage() {
     }
 
     return (
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="container py-20">
             {/* Page Header */}
-            <div className="text-center mb-12">
-                <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            <div className="text-center mb-16">
+                <h1 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 mb-4">
                     Our Blog
                 </h1>
-                <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+                <p className="text-xl text-[var(--text-secondary)] max-w-2xl mx-auto leading-relaxed">
                     Insights, tutorials, and updates from the Kodingin team.
                 </p>
             </div>
 
             {/* Error State */}
             {error && (
-                <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-6 text-center mb-8">
+                <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-6 text-center mb-8 backdrop-blur-sm">
                     <p className="text-red-400">{error}</p>
                 </div>
             )}
 
             {/* Empty State */}
             {!error && posts.length === 0 && (
-                <div className="bg-gray-800/50 rounded-xl p-12 text-center">
-                    <div className="text-6xl mb-4">📝</div>
-                    <h2 className="text-2xl font-semibold text-white mb-2">
+                <div className="bg-[var(--bg-card)] rounded-2xl p-12 text-center border border-[var(--border-color)] backdrop-blur-sm">
+                    <div className="text-6xl mb-6">📝</div>
+                    <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-3">
                         No posts yet
                     </h2>
-                    <p className="text-gray-400 mb-6">
-                        We&apos;re working on some great content. Check back soon!
+                    <p className="text-[var(--text-secondary)] mb-8 max-w-md mx-auto">
+                        We&apos;re working on some great content. Check back soon for updates!
                     </p>
                     <Link
                         href="/"
-                        className="inline-flex items-center px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors"
+                        className="btn btn-primary"
                     >
                         Back to Home
                     </Link>

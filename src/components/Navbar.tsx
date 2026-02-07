@@ -36,7 +36,7 @@ export default function Navbar() {
                         onMouseLeave={() => setIsBlogOpen(false)}
                     >
                         <button
-                            className="flex items-center gap-1 hover:text-purple-400 transition-colors"
+                            className="flex items-center gap-1 text-gray-300 hover:text-purple-400 transition-colors"
                             onClick={() => setIsBlogOpen(!isBlogOpen)}
                         >
                             About
