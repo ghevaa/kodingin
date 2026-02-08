@@ -12,8 +12,8 @@ const webProjects: ProjectItem[] = [
         description: 'A comprehensive Point of Sale system with real-time inventory tracking, sales analytics, and low stock alerts.',
         category: 'POS System',
         image: '/images/pos-dashboard.png',
-        liveUrl: 'https://example.com',
-        githubUrl: 'https://github.com',
+        liveUrl: 'https://post-cashier-web.vercel.app',
+        githubUrl: 'https://github.com/kodingincom',
     },
     {
         id: 2,

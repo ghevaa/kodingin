@@ -49,7 +49,7 @@ export default function Footer() {
                                         <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
                                     </svg>
                                 </a>
-                                <a href="https://github.com/ghevaa" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="GitHub">
+                                <a href="https://github.com/kodingincom" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="GitHub">
                                     <FiGithub />
                                 </a>
                             </div>
