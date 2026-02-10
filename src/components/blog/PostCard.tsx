@@ -13,68 +13,62 @@ export default function PostCard({ post }: PostCardProps) {
     });
 
     return (
-        <article className="group bg-[var(--bg-card)] rounded-2xl overflow-hidden border border-[var(--border-color)] hover:border-[var(--color-primary)]/50 transition-all duration-300 hover:shadow-lg hover:shadow-[var(--color-primary)]/10 hover:-translate-y-1 backdrop-blur-sm">
+        <article className="blog-card group">
             {/* Cover Image */}
-            <Link href={`/blog/${post.slug}`} className="block relative overflow-hidden aspect-video">
+            <Link href={`/blog/${post.slug}`} className="blog-card-image">
                 {post.cover_image ? (
                     <img
                         src={post.cover_image}
                         alt={post.title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                 ) : (
-                    <div className="w-full h-full bg-gradient-to-br from-[var(--color-primary)]/20 to-purple-900/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                    <div className="blog-image-placeholder">
                         <span className="text-4xl opacity-50">📝</span>
                     </div>
                 )}
 
                 {/* Overlay on hover */}
-                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <span className="px-4 py-2 bg-white/10 backdrop-blur-md rounded-full text-white text-sm font-medium border border-white/20 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <span className="px-5 py-2.5 bg-white/10 backdrop-blur-md rounded-full text-white text-sm font-medium border border-white/20 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
                         Read Article
                     </span>
                 </div>
             </Link>
 
             {/* Content */}
-            <div className="p-6">
+            <div className="blog-card-content">
                 {/* Date */}
-                <div className="flex items-center gap-2 mb-3">
+                <div className="blog-card-date">
                     <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-primary)]"></span>
-                    <time
-                        dateTime={post.created_at}
-                        className="text-xs font-medium text-[var(--text-secondary)] uppercase tracking-wider"
-                    >
+                    <time dateTime={post.created_at}>
                         {formattedDate}
                     </time>
                 </div>
 
                 {/* Title */}
-                <h2 className="mb-3">
-                    <Link
-                        href={`/blog/${post.slug}`}
-                        className="text-xl font-bold text-white hover:text-[var(--color-primary)] transition-colors line-clamp-2 leading-tight"
-                    >
+                <Link href={`/blog/${post.slug}`} className="block">
+                    <h2 className="blog-card-title">
                         {post.title}
-                    </Link>
-                </h2>
+                    </h2>
+                </Link>
 
                 {/* Excerpt */}
                 {post.excerpt && (
-                    <p className="text-[var(--text-secondary)] line-clamp-3 mb-6 text-sm leading-relaxed">
+                    <p className="blog-card-excerpt">
                         {post.excerpt}
                     </p>
                 )}
 
                 {/* Footer */}
-                <div className="flex items-center justify-between mt-auto pt-4 border-t border-[var(--border-color)]/50">
+                <div className="blog-card-footer">
                     <Link
                         href={`/blog/${post.slug}`}
-                        className="inline-flex items-center text-[var(--color-primary)] hover:text-[var(--color-primary-light)] text-sm font-bold transition-colors group/link"
+                        className="blog-card-link"
                     >
                         Read More
                         <svg
-                            className="w-4 h-4 ml-1 group-hover/link:translate-x-1 transition-transform"
+                            className="w-4 h-4"
                             fill="none"
                             stroke="currentColor"
                             viewBox="0 0 24 24"

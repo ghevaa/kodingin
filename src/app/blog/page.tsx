@@ -24,19 +24,12 @@ export default async function BlogPage() {
             <div className="absolute top-[-20%] left-[-10%] w-[500px] h-[500px] bg-[var(--color-primary)]/20 rounded-full blur-[120px] pointer-events-none"></div>
             <div className="absolute bottom-[-20%] right-[-10%] w-[500px] h-[500px] bg-[var(--color-secondary)]/20 rounded-full blur-[120px] pointer-events-none"></div>
 
-            <div className="container relative z-10 py-24">
+            <div className="blog-container">
                 {/* Page Header */}
-                <div className="text-center mb-20">
-                    <div className="inline-block mb-4 px-4 py-1.5 rounded-full bg-[var(--color-primary)]/10 border border-[var(--color-primary)]/20 text-[var(--color-primary-light)] text-sm font-medium tracking-wide">
-                        Latest Updates
-                    </div>
-                    <h1 className="text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-gray-500 mb-6 tracking-tight">
+                <div className="mb-20">
+                    <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">
                         Our Blog
                     </h1>
-                    <p className="text-xl text-[var(--text-secondary)] max-w-2xl mx-auto leading-relaxed">
-                        Insights, tutorials, and updates from the Kodingin team.
-                        <br />Everything you need to build better software.
-                    </p>
                 </div>
 
                 {/* Error State */}
