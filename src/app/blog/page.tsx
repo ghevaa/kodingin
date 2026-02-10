@@ -26,7 +26,7 @@ export default async function BlogPage() {
 
             <div className="blog-container">
                 {/* Page Header */}
-                <div className="mb-20">
+                <div className="blog-header">
                     <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">
                         Our Blog
                     </h1>
