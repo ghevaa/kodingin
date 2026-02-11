@@ -20,9 +20,14 @@ function LoginFormSkeleton() {
 export default function LoginPage() {
     return (
         <div className="min-h-screen flex items-center justify-center bg-[var(--bg-primary)] relative overflow-hidden">
-            {/* Background Glows */}
-            <div className="absolute top-[-20%] left-[-10%] w-[500px] h-[500px] bg-[var(--color-primary)]/20 rounded-full blur-[120px] pointer-events-none"></div>
-            <div className="absolute bottom-[-20%] right-[-10%] w-[500px] h-[500px] bg-[var(--color-secondary)]/20 rounded-full blur-[120px] pointer-events-none"></div>
+            {/* Animated Background */}
+            <div className="fixed inset-0 overflow-hidden pointer-events-none">
+                <div className="absolute inset-0 bg-[var(--bg-primary)]"></div>
+                <div className="grid-overlay opacity-30"></div>
+                <div className="gradient-orb orb-1 opacity-40"></div>
+                <div className="gradient-orb orb-2 opacity-30"></div>
+                <div className="gradient-orb orb-3 opacity-20"></div>
+            </div>
 
             <div className="w-full max-w-md p-4 relative z-10">
                 {/* Header */}

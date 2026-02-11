@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import type { Post } from '@/types/database';
 import { createPostAction, updatePostAction } from '@/actions/posts';
 import { generateSlug } from '@/lib/utils';
+import TiptapEditor from './TiptapEditor';
 
 interface PostFormProps {
     post?: Post;
@@ -152,24 +153,18 @@ export default function PostForm({ post, mode }: PostFormProps) {
                         />
                     </div>
 
+
+
                     {/* Content */}
                     <div>
                         <label htmlFor="content" className="block text-sm font-semibold text-[var(--text-secondary)] mb-2 uppercase tracking-wider">
                             Content <span className="text-red-400">*</span>
                         </label>
                         <div className="relative">
-                            <textarea
-                                id="content"
-                                value={content}
-                                onChange={(e) => setContent(e.target.value)}
-                                required
-                                rows={20}
-                                className="w-full px-4 py-3 bg-[var(--bg-tertiary)]/50 border border-[var(--border-color)] rounded-xl text-[var(--text-primary)] placeholder-[var(--text-muted)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent resize-y font-mono text-sm transition-all backdrop-blur-sm leading-relaxed"
-                                placeholder="Write your post content here..."
+                            <TiptapEditor
+                                content={content}
+                                onChange={setContent}
                             />
-                            <div className="absolute bottom-4 right-4 text-xs text-[var(--text-muted)] bg-[var(--bg-card)] px-2 py-1 rounded-md border border-[var(--border-color)]">
-                                Markdown Supported
-                            </div>
                         </div>
                     </div>
 

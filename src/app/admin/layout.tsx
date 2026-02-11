@@ -18,17 +18,24 @@ export default async function AdminLayout({
     }
 
     return (
-        <div className="min-h-screen bg-[var(--bg-primary)] flex">
+        <div className="min-h-screen bg-[var(--bg-primary)] flex relative overflow-hidden">
+            {/* Animated Background */}
+            <div className="fixed inset-0 overflow-hidden pointer-events-none">
+                <div className="absolute inset-0 bg-[var(--bg-primary)]"></div>
+                <div className="grid-overlay opacity-30"></div>
+                <div className="gradient-orb orb-1 opacity-20"></div>
+                <div className="gradient-orb orb-2 opacity-15"></div>
+                <div className="gradient-orb orb-3 opacity-10"></div>
+            </div>
+
             {/* Sidebar */}
-            <Sidebar userEmail={user.email} />
+            <div className="relative z-20 h-screen">
+                <Sidebar userEmail={user.email} />
+            </div>
 
             {/* Main Content */}
-            <main className="flex-1 overflow-auto h-screen relative">
-                {/* Abstract Glows (matching reference) */}
-                <div className="absolute top-[-20%] left-[20%] w-[500px] h-[500px] bg-[var(--color-primary)]/5 rounded-full blur-[120px] pointer-events-none"></div>
-                <div className="absolute bottom-[-10%] right-[-5%] w-[400px] h-[400px] bg-[var(--color-secondary)]/5 rounded-full blur-[100px] pointer-events-none"></div>
-
-                <div className="p-8 relative z-10">
+            <main className="flex-1 overflow-auto h-screen relative z-10">
+                <div className="p-8">
                     {children}
                 </div>
             </main>
