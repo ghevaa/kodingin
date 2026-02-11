@@ -67,9 +67,9 @@ export default async function BlogPostPage({ params }: PageProps) {
             <div className="absolute top-[-20%] left-[-10%] w-[500px] h-[500px] bg-[var(--color-primary)]/10 rounded-full blur-[120px] pointer-events-none"></div>
             <div className="absolute bottom-[-20%] right-[-10%] w-[500px] h-[500px] bg-[var(--color-secondary)]/10 rounded-full blur-[120px] pointer-events-none"></div>
 
-            <article className="container pb-24 max-w-4xl mx-auto relative z-10">
+            <article className="blog-article-container">
                 {/* Glass Container */}
-                <div className="bg-[var(--bg-card)]/50 backdrop-blur-xl rounded-3xl border border-[var(--border-color)]/50 p-8 md:p-12 shadow-2xl">
+                <div className="blog-article-card">
                     {/* Back Link */}
                     <Link
                         href="/blog"

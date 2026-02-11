@@ -12,6 +12,15 @@
     z-index: 10;
 }
 
+.blog-article-container {
+    max-width: 56rem;
+    /* max-w-4xl */
+    margin: 0 auto;
+    padding: 140px 24px 100px;
+    position: relative;
+    z-index: 10;
+}
+
 .blog-header {
     margin-bottom: 100px;
 }
@@ -123,4 +132,20 @@
     align-items: center;
     justify-content: center;
     background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
+}
+
+.blog-article-card {
+    background-color: rgba(26, 26, 37, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+@media (min-width: 768px) {
+    .blog-article-card {
+        padding: 3rem;
+    }
 }
