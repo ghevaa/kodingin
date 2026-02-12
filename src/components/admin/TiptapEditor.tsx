@@ -22,7 +22,7 @@ const MenuBar = ({ editor }: { editor: any }) => {
 
     const setLink = () => {
         const previousUrl = editor.getAttributes('link').href;
-        consturl = window.prompt('URL', previousUrl);
+        const url = window.prompt('URL', previousUrl);
 
         if (url === null) {
             return;
